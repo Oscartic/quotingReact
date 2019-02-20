@@ -3,6 +3,7 @@ import Header from './Header';
 import QuotingForm from './QuotingForm';
 
 import {obtenerDiferenciaAnio, calcularMarca, obtenerPlan} from '../helper'
+import Summary from './Summary';
 class App extends Component {
 
   state = {
@@ -50,10 +51,13 @@ class App extends Component {
   render() {
     return (
       <div className="contenedor">
-        <Header title="Cotizador de Autos"/>
+        <Header title="Cotizador de Autos" />
         <div className="contenedor-formulario">
-          <QuotingForm handleQuote={this.handleQuote}/>
+          <QuotingForm handleQuote={this.handleQuote} />
+
+        <Summary datos={this.state.datos} resultado={this.state.resultado} />
         </div>
+
 
       </div>
     );
