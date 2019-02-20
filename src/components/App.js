@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import QuotingForm from './QuotingForm';
-
-import {obtenerDiferenciaAnio, calcularMarca, obtenerPlan} from '../helper'
 import Summary from './Summary';
+import Result from './Result';
+import {obtenerDiferenciaAnio, calcularMarca, obtenerPlan} from '../helper'
+
 class App extends Component {
 
   state = {
@@ -11,9 +12,9 @@ class App extends Component {
     datos : {}
   }
 
-  handleQuote= (data) => {
+  handleQuote = (datos) => {
   
-    const {brand, year, plan} = data;
+    const {brand, year, plan} = datos;
     // Agregar una base de 2000, 
     let resultado = 2000;
 
@@ -38,14 +39,11 @@ class App extends Component {
       year : year,
       plan : plan
     }
-    
     // ya tenemos el costo y podemos setear el state
     this.setState({
         resultado : resultado, 
         datos : datosAuto
     });
-
-
   }
 
   render() {
@@ -53,9 +51,16 @@ class App extends Component {
       <div className="contenedor">
         <Header title="Cotizador de Autos" />
         <div className="contenedor-formulario">
-          <QuotingForm handleQuote={this.handleQuote} />
+          <QuotingForm 
+            handleQuote={this.handleQuote} 
+          />
 
-        <Summary datos={this.state.datos} resultado={this.state.resultado} />
+          <Summary 
+            datos={this.state.datos} 
+          />
+          <Result 
+            resultado={this.state.resultado} 
+          />
         </div>
 
 
