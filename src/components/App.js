@@ -40,6 +40,7 @@ class App extends Component {
       plan : plan
     }
     // ya tenemos el costo y podemos setear el state
+   
     this.setState({
         resultado : resultado, 
         datos : datosAuto
@@ -49,7 +50,10 @@ class App extends Component {
   render() {
     return (
       <div className="contenedor">
-        <Header title="Cotizador de Autos" />
+        <Header 
+        title="Cotizador de Autos" 
+        />
+        
         <div className="contenedor-formulario">
           <QuotingForm 
             handleQuote={this.handleQuote} 
@@ -58,6 +62,7 @@ class App extends Component {
           <Summary 
             datos={this.state.datos} 
           />
+          
           <Result 
             resultado={this.state.resultado} 
           />

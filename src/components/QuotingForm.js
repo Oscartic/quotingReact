@@ -9,7 +9,7 @@ class QuotingForm extends Component {
     fullPlanRef= React.createRef();
  
     // 2.handleQuote es el metodo que recibe lo que se envia desde el formulario
-    handleQuote= (e) => {
+    handleQuote = (e) => {
         e.preventDefault();
         // leer el plan 
         const plan = this.basicPlanRef.current.checked ? 'basico' : 'completo';

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { primeraMayuscula } from '../helper';
-import Result from './Result';
+import { primeraMayuscula } from '../helper';  
+
+
 class Summary extends Component {
 
     mostrarResumen = () => {
